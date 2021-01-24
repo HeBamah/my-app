@@ -9,10 +9,10 @@ const users = [
   {name:'Yara', id:'333333333'},
   {name:'Ihab', id:'444444'}
 ]
-const imges=[]
+var imges=[];
 //route
 app.get('/get-users',(req, res)=>{
-  res.send(users)
+  res.send(imges)
 })
 
 app.post('/addImg',(req,res)=>{
