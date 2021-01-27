@@ -15,13 +15,30 @@ app.get('/get-users',(req, res)=>{
   res.send(imges)
 })
 
+
 app.post('/addImg',(req,res)=>{
 
-    //console.log(req.body)
+   // console.log(req.body)
     imges.push(req.body)
     res.send({ok:true})
 })
 
+
+app.post('/addRate',(req,res)=>{
+   console.log("heeeeereeeeee")
+  // console.log(req.body.imagename)
+  // console.log(req.body.count)
+  // imges.push(req.body)
+  imges.forEach(imge => {
+    if(imge.imagename==req.body.imagename){
+      let x=parseInt(req.body.count)
+      imge.count+=x;
+     // console.log(count)
+      console.log(imge.count)
+    }
+  });
+   res.send({ok:true})
+})
 
 const port = process.env.PORT || 3000;
 
